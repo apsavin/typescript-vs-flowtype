@@ -310,7 +310,7 @@ var props = {
 }
 
 type PropsType = typeof props;
-type KeysOfProps = $Enum<PropsType>;
+type KeysOfProps = $Keys<PropsType>;
 
 function getProp<T>(key: KeysOfProps): T {
   return props[key]
@@ -339,7 +339,7 @@ function getProp<T>(key: KeysOfProps): T {
 ### Flow
 
 ```js
-type $Record<T, U> = {[key: $Enum<T>]: U}
+type $Record<T, U> = {[key: $Keys<T>]: U}
 type SomeRecord = $Record<{ a: number }, string>
 ```
 
